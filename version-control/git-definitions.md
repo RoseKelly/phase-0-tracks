@@ -17,4 +17,4 @@ Answer: A commit creates a "save point" in Git. Commit messages should say exact
 Answer: Merge conflicts can happen when the changes you've made to one branch disagrees with the another. Git will let you know when there has been a conflict merging branches. 
 
 
-*** This is my minor edit for Assignment 1.5 Release 2 ***
+*** This is my minor edit for Assignment 1.5 Release 2 **
