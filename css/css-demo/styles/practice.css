@@ -1,0 +1,26 @@
+#contact-info {
+	font-size:.8em;
+}
+
+.job {
+	background-color: #e9e5dc;
+	border-radius: 2px;
+	padding: 5px;
+	margin-top: 5px;
+}
+
+.small {
+	font-size:.8em;
+}
+
+#special {
+	font-size: 2em;
+}
+
+li:first-child {
+	font-size: 2em;
+}
+
+a:hover {
+	background-color: purple;
+}
