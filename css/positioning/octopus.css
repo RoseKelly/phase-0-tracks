@@ -1,13 +1,18 @@
 #hat {
+  padding-top: 50px;
+  padding-left: 140px;  
+  position: absolute;
+}
+
+#glasses {
+  padding-top: 260px;
+  padding-left: 190px;
   position: absolute;
 }
 
 #octopus {
-  margin: 50px;
-  padding-top: 200px;
-}
-
-#glasses {
-  position: relative;
-  
+  margin: 150px;
+  padding-top: 10px;
+  position: fixed;
+  z-index: -1;
 }
