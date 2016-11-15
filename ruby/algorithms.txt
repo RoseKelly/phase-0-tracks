@@ -1,0 +1,19 @@
+Robot using an elevator:
+
+-Start at the bottom row of buttons on the left-most side of the button columns
+-Count beginning with this button and call it #1
+  -Move right, stopping at each button, and add 1 each time until you run out of buttons on that row
+  -Move your finger up one row of buttons and all the way over to the left and continue counting in the same direction as the step above, again adding 1 each time
+  -Continue this until you have reached the number you are looking for
+-Press your finger forward to select the button 
+
+
+Taking the train to work:
+
+-Wait on platform until train arrives
+-When doors open, enter train
+-When train stops, listen for "Monroe"
+  -If train stop is not "Monroe", continue on the train
+  -If train stop is "Monroe", exit the train
+    -Navigate toward the office
+
