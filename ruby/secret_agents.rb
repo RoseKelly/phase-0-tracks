@@ -1,6 +1,6 @@
 # define the encrypt method
 # begin the letter_count at 0 (first letter of the input string)
-# start the loop: while letter_count is less than the string length,
+# start the loop: while letter_counter is less than the string length,
 # if it's "a" change it to "b" and so on <-- this did not work but
 # "z" to "a" did.
 # if it's a space, change nothing
@@ -22,11 +22,34 @@ def encrypt(string)
     p string
   end
 
-
 encrypt("abc")
 encrypt("zed")
 
 
+# define decrypt method
+# start the letter_counter at 0 again? Or -1?
+# while the letter_counter is less than the string length,
+# if the string's letter_counter is at "z" change it to "y"
+#
+
+
+def decrypt(string)
+  letter_counter = 0
+    while letter_counter < string.length
+      if string[letter_counter] == "z"
+        string [letter_counter] = "y"
+      elsif string[letter_counter] == " "
+        string[letter_counter]
+      else
+        string[letter_counter] = string[-1]
+      end
+      letter_counter -= 1
+    end
+    p string
+  end
+
+encrypt("abc")
+encrypt("zed")
 
 
 
