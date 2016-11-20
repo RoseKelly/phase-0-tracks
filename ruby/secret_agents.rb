@@ -1,10 +1,25 @@
-# define the encrypt method
-# begin the letter_count at 0 (first letter of the input string)
-# start the loop: while letter_counter is less than the string length,
-# if it's "a" change it to "b" and so on <-- this did not work but
-# "z" to "a" did.
-# if it's a space, change nothing
-# add one letter each time so you're always looking at the next one
+# PSEUDOCODING AND METHOD DECLARATIONS
+
+# Encrypting plan:
+# define encrypt method and pass a string into it
+# set letter_counter to 0 (first letter of the input string)
+# Use a loop? While letter_counter is less than the string.length,
+# if the letter_counter is equal to "a" set it to "b"
+# Spaces can remain spaces
+# Then go to the next letter letter
+# Add 1 to the letter_counter each time
+# print the new encrypted string
+
+
+# Decrypting plan: 
+# define decrypt method
+# start the letter_counter at 0 again?
+# while the letter_counter is less than the string length,
+# if the string's letter_counter is at "z" change it to "y"
+# if you have a letter, and want to get the previous letter 
+# find the index of the current letter, - 1 each time to get the
+# index of the previous letter
+# then search through the alphabet for the specific index
 
 
 def encrypt(string)
@@ -22,64 +37,73 @@ def encrypt(string)
     p string
   end
 
-encrypt("abc")
-encrypt("zed")
-
-
-# define decrypt method
-# start the letter_counter at 0 again? Or -1?
-# while the letter_counter is less than the string length,
-# if the string's letter_counter is at "z" change it to "y"
-#
-
 
 def decrypt(string)
   letter_counter = 0
-    while letter_counter < string.length
-      if string[letter_counter] == "z"
-        string [letter_counter] = "y"
-      elsif string[letter_counter] == " "
-        string[letter_counter]
-      else
-        string[letter_counter] = string[-1]
-      end
-      letter_counter -= 1
-    end
-    p string
-  end
-
-encrypt("abc")
-encrypt("zed")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def encrpyt2(string)
-  letter_count = 0
-  while letter_count < string.length 
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
+  while letter_counter < string.length
     if string[letter_counter] == "a"
-      string[letter_counter] = "b"
+      string[letter_counter] = "z"
     elsif string[letter_counter] == " "
       string[letter_counter]
-    else
+    else 
+
+      new_index = alphabet.index(string[letter_counter])
+      string[letter_counter] = alphabet[new_index -1]
     end
     letter_counter += 1
   end
   p string
 end
+
+
+# DRIVER CODE SECTION
+
+# encrypt("abc")
+# encrypt("zed")
+# decrypt("bcd")
+# decrypt("afe")
+
+# decrypt(encrypt("swordfish"))
+
+# I believe this swordfish nested method call works because it 
+# follows the regular order of Ruby logic. It first looks at the
+# most nested method (in this case, encrypt), performs that call
+# then looks at the outer most method (decrypt), and performs
+# that call. So it first moves every letter up one, and then
+# fixes itself with decrypt.
+
+# other attempts... ignore
+# current_letter = string[letter_counter]
+# current_index = alphabet.index(current_letter)
+# previous_index = current_index - 1
+# alphabet = previous_index
+
+# Ask whether encrypting or decrypting 
+# Check for valid input
+# Then ask for the password
+# Pass the user's password to the necessary method
+
+valid_input = false
+until valid_input
+  puts "Would you like to encrypt or decrypt a password?"
+  agent_answer = gets.chomp
+  if agent_answer == "encrypt"
+    valid_input = true
+  elsif agent_answer == "decrypt"
+    valid_input = true
+  else
+    puts "Please type 'encrypt' or 'decrypt'."
+  end
+end
+
+puts "Please type your password"
+password = gets.chomp
+
+if agent_answer == "encrypt"
+  puts encrypt(password)
+else
+  puts decrypt(password)
+end
+
 
