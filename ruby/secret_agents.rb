@@ -26,7 +26,7 @@ def encrypt(string)
   letter_counter = 0
     while letter_counter < string.length
       if string[letter_counter] == "z"
-        string [letter_counter] = "a"
+        string[letter_counter] = "a"
       elsif string[letter_counter] == " "
         string[letter_counter]
       else
@@ -38,6 +38,9 @@ def encrypt(string)
   end
 
 
+
+
+
 def decrypt(string)
   letter_counter = 0
   alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -47,7 +50,6 @@ def decrypt(string)
     elsif string[letter_counter] == " "
       string[letter_counter]
     else 
-
       new_index = alphabet.index(string[letter_counter])
       string[letter_counter] = alphabet[new_index -1]
     end
@@ -55,6 +57,32 @@ def decrypt(string)
   end
   p string
 end
+
+
+
+
+=begin
+Alternative way to write this, per Zach during office hours:
+def decrypt(string)
+  letter_counter = 0
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
+  while letter_counter < string.length
+    current_letter = string[letter_counter]
+    if current_letter == "a"
+      current_letter = "z"
+    elsif current_letter == " "
+      current_letter
+    else 
+
+      new_index = alphabet.index(string[current_letter])
+      string[letter_counter] = alphabet[new_index -1]
+
+    end
+    letter_counter += 1
+  end
+  p string
+end
+=end
 
 
 # DRIVER CODE SECTION
@@ -73,7 +101,7 @@ end
 # that call. So it first moves every letter up one, and then
 # fixes itself with decrypt.
 
-# other attempts... ignore
+# other attempts... ignore (keeping for my own reference)
 # current_letter = string[letter_counter]
 # current_index = alphabet.index(current_letter)
 # previous_index = current_index - 1

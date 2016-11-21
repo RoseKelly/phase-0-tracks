@@ -70,21 +70,45 @@ until new_employees == 0
   puts "Would like garlic bread: #{wants_bread}"
   puts "Would like insurance: #{insurance}"
 
-
+output = nil
   case 
   when sunshine_allergy == true
-    puts "Probably a vampire."
+    output = "Probably a vampire."
   when full_name == false
-    puts "Definitely a vampire."
+    output = "Definitely a vampire."
   when age == false && wants_bread == false && insurance == false
-    puts "Almost certainly a vampire."
+    output = "Almost certainly a vampire."
+  when age == true && (wants_bread == true || insurance == true)
+    output = "Probably not a vampire."
+  when age == false && (wants_bread == false || insurance == false)
+    output = "Probably a vampire."
+  else output = "Results inconclusive." 
+  end
+puts output
+
+=begin
+  **Using "output" above as suggested in Zach's office hours in order to 
+    get the last condition met instead of the first**
+
+  case 
   when age == true && (wants_bread == true || insurance == true)
     puts "Probably not a vampire."
+
   when age == false && (wants_bread == false || insurance == false)
     puts "Probably a vampire."
+
+  when age == false && wants_bread == false && insurance == false
+    puts "Almost certainly a vampire."
+
+  when full_name == false
+    puts "Definitely a vampire."
+
+  when sunshine_allergy == true
+    puts "Probably a vampire."
+
   else puts "Results inconclusive." 
   end
-
+=end
 
 new_employees -= 1
 end
