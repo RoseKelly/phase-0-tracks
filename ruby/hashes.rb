@@ -8,19 +8,19 @@
 # => if they ask to update any others, repeat step above
 # => otherwise if they type "none", it's done
 
-puts "Name: "
+puts "Name:"
 full_name = gets.chomp
 
-puts "Age: "
+puts "Age:"
 age = gets.chomp.to_i
 
-puts "Number of children: "
+puts "Number of children:"
 children_num = gets.chomp.to_i
 
-puts "Preferred decor theme: "
+puts "Preferred decor theme:"
 decor_theme = gets.chomp
 
-puts "Budget flexible (true/false): "
+puts "Budget flexible (true/false):"
 flexible_budget = gets.chomp
 
 puts "Would you like to change anything? Type 'full_name', 'age', 'children_num', 'decor_theme', 'flexible_budget', or 'none'."
@@ -28,8 +28,19 @@ changed_answer = gets.chomp
 
 puts "Please enter your new response for #{changed_answer}."
 new_value = gets.chomp
-  if new_value == "full_name"
+  if changed_answer == "full_name"
     full_name = new_value.to_sym
+  elsif changed_answer == "age"
+    age = new_value.to_sym
+  elsif changed_answer == "children_num"
+    children_num = new_value.to_sym
+  elsif changed_answer == "decor_theme"
+    decor_theme = new_value.to_sym
+  elsif changed_answer == "flexible_budget"
+    flexible_budget = new_value.to_sym
+  else
+    changed_answer == "none"
+  end
 
 
 form_responses = {
